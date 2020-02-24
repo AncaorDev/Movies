@@ -1,0 +1,30 @@
+.body-movies {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.example-icon {
+    padding: 0 14px;
+}
+
+.example-container {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: calc(100% - 64px);
+}
+mat-sidenav-content{
+    background-color: #eef5f9;
+    button{
+        z-index: 50;
+        margin-left: 16px !important;
+        margin-right: 16px !important;
+        margin-top: 12px !important;
+    }
+}
+.menu-active {
+    background: rgba(0,0,0,.1);
+}

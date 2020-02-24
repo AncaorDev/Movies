@@ -30,3 +30,61 @@ $movies-theme: mat-light-theme($movies-primary, $movies-accent, $movies-warn);
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+body{
+    margin: 0;
+}
+// .text-warn {
+//     color:$warn;
+// }
+.bg-0{
+    background-color:  transparent;
+}
+.flex{
+    display: flex;
+}
+.flex-between{
+    display: flex;
+    justify-content: space-between
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+.flex-center-v{
+    display: flex;
+    align-items: center;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.w-full{
+    width: 100%;
+}
+
+
+.toolbar {
+    background-color: #1b1b1b;
+    border-color: #292929;
+    box-shadow: 0 0 7px rgba(0,0,0,.5);
+    color: #ffffff;
+    padding: 0 12px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ffffff;
+    .logo {
+        max-width: 120px;
+    }
+    .user {
+        max-width: 60px;
+        border-radius: 50%;
+    }
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}

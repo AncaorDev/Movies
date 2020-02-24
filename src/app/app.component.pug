@@ -1,1 +1,19 @@
-p Hola
+.body-movies
+    mat-toolbar-row.toolbar
+        button(mat-icon-button, type="button", (click)="sidenav.toggle()")
+            mat-icon close
+        img.logo(src="./assets/images/logo.png")
+        .example-spacer
+        img.user(src="./assets/images/user.jpg")
+        p Admin
+    mat-sidenav-container.example-container
+        mat-sidenav(#sidenav, mode='side', opened="true")
+            mat-list
+                mat-list-item.item(*ngFor="let menu of menus",
+                                    [routerLink]="menu.link",
+                                    routerLinkActive="menu-active",
+                                    [routerLinkActiveOptions]="{exact: menu.exact}",)
+                    mat-icon(matListIcon) {{menu.icon}}
+                    h3(matLine) {{menu.title}}
+        mat-sidenav-content
+            router-outlet

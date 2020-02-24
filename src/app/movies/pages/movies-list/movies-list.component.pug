@@ -1,0 +1,27 @@
+mat-toolbar-row.toolbar
+    h2 Películas
+    .example-spacer
+    button(mat-raised-button, color="primary", (click)="createEditMovie()") Nueva película
+.body
+    table.mat-elevation-z8(mat-table, [dataSource]="dataSource")
+        ng-container(matColumnDef='id')
+            th(mat-header-cell, *matHeaderCellDef)  ID.
+            td(mat-cell, *matCellDef='let element')  {{element.id}}
+        ng-container(matColumnDef='name')
+            th(mat-header-cell, *matHeaderCellDef)  Name
+            td(mat-cell, *matCellDef='let element')  {{element.name}}
+        ng-container(matColumnDef='date_push')
+            th(mat-header-cell, *matHeaderCellDef)  F. Publicación
+            td(mat-cell, *matCellDef='let element')  {{element.date_push}}
+        ng-container(matColumnDef='state')
+            th(mat-header-cell, *matHeaderCellDef)  Estado
+            td(mat-cell, *matCellDef='let element')  {{element.state}}
+        ng-container(matColumnDef='actions')
+            th(mat-header-cell, *matHeaderCellDef) Acciones
+            td(mat-cell, *matCellDef='let element')
+                button(mat-icon-button, (click)="createEditMovie(element)")
+                    mat-icon edit
+                button(mat-icon-button, (click)="deleteMovie(element)")
+                    mat-icon delete
+        tr(mat-header-row, *matHeaderRowDef="displayedColumns")
+        tr(mat-row, *matRowDef="let row; columns: displayedColumns;")

@@ -1,0 +1,22 @@
+form.content-modal([formGroup]="formMovie", (ngSubmit)="registerMovie()")
+	.mat-dialog-title.flex-center-v.flex
+		span {{ title }}
+		.example-spacer
+		button(mat-icon-button, type="button", (click)="onNoClick()")
+			mat-icon close
+	.mat-dialog-content.padding-top
+		.flex-between.flex-center-v
+			mat-form-field.w-full(appearance="outline")
+				mat-label Nombre
+				input(matInput, placeholder="Escribe aquí...", formControlName="name", autocomplete="off")
+		.flex-between.flex-center-v
+			mat-form-field.w-full(appearance="outline")
+				mat-label F. Publicación
+				input(matInput, placeholder="12/12/2019", formControlName="date_push", autocomplete="off", maxLength="10")
+		.flex-between.flex-center-v
+			mat-form-field.w-full(appearance="outline")
+				mat-label Seleccionar estado
+				mat-select(placeholder="Select", formControlName="state")
+					mat-option(*ngFor = "let state of states", [value]="state.codigo") {{state.name }}
+	.mat-dialog-actions
+		button(type="submit", mat-raised-button color="primary", [disabled]="!formStatus.change") Guardar
